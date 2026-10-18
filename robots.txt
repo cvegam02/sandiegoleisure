@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /
+# VISTA PREVIA. Al publicar en sandiegoleisure.com, reemplazar por:
+# User-agent: *
+# Allow: /
+# Sitemap: https://www.sandiegoleisure.com/sitemap.xml

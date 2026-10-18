@@ -470,3 +470,89 @@ img[src$="photo-3.jpg"] { object-position: 50% 50%; }
 img[src$="photo-4.jpg"] { object-position: 50% 82%; }
 img[src$="photo-5.jpg"] { object-position: 50% 45%; }
 .cta-inner { background-position: 50% 82%; }
+
+/* ---------- Páginas de servicio: el mismo texto, con estructura visual ----------
+   Solo se agregan contenedores y clases; las palabras y los encabezados no cambian. */
+.article-body > section.sv { max-width: none; gap: 64px; }
+.sv > div { display: grid; gap: 16px; min-width: 0; }
+.sv p, .sv ul { max-width: 64ch; }
+.sv h3 { font-size: 1.7rem; }
+.sv-lead { font-family: var(--f-display); font-size: clamp(1.35rem, 2.2vw, 1.6rem); line-height: 1.45; color: var(--ink); }
+.sv-next { font-weight: 600; color: var(--ink); }
+.sv a { font-weight: 600; overflow-wrap: anywhere; }
+
+/* Las dos visas, lado a lado */
+.article-body ul.sv-options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; max-width: none; }
+.article-body ul.sv-options li { padding: 22px 24px; border: 1.5px solid var(--line); border-radius: var(--r); color: var(--muted); }
+.article-body ul.sv-options li::before { display: none; }
+.sv-options strong { font-weight: 600; }
+.sv-options a { display: block; margin-bottom: 4px; font-family: var(--f-display); font-weight: 500; font-size: 1.45rem; line-height: 1.2; color: var(--ink); text-decoration: none; }
+.sv-options a:hover { color: var(--link); text-decoration: underline; }
+
+/* Capítulo de cada tipo de residencia */
+.sv > .sv-chapter { padding: clamp(24px, 4vw, 44px); border-radius: var(--r); background: var(--sky); gap: 18px; }
+.sv .sv-chapter-title { font-size: clamp(1.9rem, 3vw, 2.4rem); }
+
+/* Dos columnas: a quién aplica / beneficios */
+.sv .sv-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); margin-top: 8px; }
+.sv-col { display: grid; gap: 12px; align-content: start; padding-top: 18px; border-top: 3px solid var(--sun); }
+.sv-col h3 { font-size: 1.35rem; }
+.sv-col ul li { font-size: 1.05rem; }
+
+/* Montos */
+.sv-money .sv-col { padding: 22px 24px; border: 1.5px solid var(--line); border-top: 3px solid var(--sea); border-radius: 0 0 var(--r) var(--r); }
+.sv-money strong { color: var(--ink); }
+
+.sv-note { padding: 18px 22px; border-left: 4px solid var(--sun); border-radius: 0 var(--r-sm) var(--r-sm) 0; background: #fff6e6; font-size: 1.02rem; }
+.sv-tip { color: var(--muted); }
+
+/* El proceso: una ruta con tres paradas */
+.sv-route { display: grid; gap: 0; margin-top: 8px; }
+.sv-step { position: relative; display: grid; gap: 12px; padding: 0 0 40px 48px; }
+.sv-step::before { content: ""; position: absolute; left: 10px; top: 12px; bottom: -12px; width: 2px; background: var(--line); }
+.sv-step:last-child { padding-bottom: 0; }
+.sv-step:last-child::before { display: none; }
+.sv-step::after { content: ""; position: absolute; left: 0; top: 6px; width: 22px; height: 22px; border-radius: 50%; background: var(--sun); box-shadow: 0 0 0 5px #fff, 0 0 0 6px var(--line); }
+.sv-step > h3:first-child { font-size: 1.55rem; }
+.sv .sv-plain { font-family: var(--f-body); font-size: 1.12rem; font-weight: 600; line-height: 1.5; color: var(--text); }
+.sv .sv-label { font-family: var(--f-body); font-size: 1rem; font-weight: 700; color: var(--sea); margin-top: 4px; }
+
+/* Errores comunes frente a cómo ayudamos */
+.sv .sv-contrast { margin-top: 0; gap: 16px; }
+.sv-contrast .sv-col { padding: 26px; border-top: 0; border-radius: var(--r); gap: 10px; }
+.sv-contrast h3 { font-size: 1.45rem; margin-bottom: 6px; }
+.sv-avoid { background: #fdf0ee; }
+.sv-help { background: #e7f3f1; }
+.sv-contrast p { font-size: 1.05rem; line-height: 1.5; }
+.sv-contrast .sv-next { margin-top: 8px; padding-top: 14px; border-top: 1px solid rgba(16, 42, 60, .12); }
+
+/* Contacto directo */
+.sv > .sv-contact { padding: clamp(24px, 4vw, 36px); border-radius: var(--r); background: var(--ink); color: #fff; gap: 10px; }
+.sv-contact p { max-width: none; font-size: 1.15rem; }
+.sv-contact strong { font-weight: 600; }
+.sv-contact a { color: var(--sun-2); }
+.sv-contact a:hover { color: #fff; }
+
+/* Preguntas frecuentes, siempre visibles */
+.sv-faq { gap: 0 !important; }
+.sv-faq h3 { margin-bottom: 12px; }
+.sv-faq p { padding: 20px 0; border-top: 1px solid var(--line); color: var(--muted); }
+.sv-faq p:last-child { border-bottom: 1px solid var(--line); }
+.sv-faq p strong { display: block; margin-bottom: 6px; font-family: var(--f-display); font-weight: 500; font-size: 1.3rem; line-height: 1.3; color: var(--ink); }
+
+.sv > .sv-ready { padding-left: 24px; border-left: 4px solid var(--sun); gap: 10px; }
+
+/* Tarifas como lista de precios */
+.article-body > section.sv-fees { max-width: 640px; gap: 22px; padding: clamp(24px, 4vw, 36px); border: 1.5px solid var(--line); border-radius: var(--r); }
+.sv-fees h2 { display: grid; gap: 0; font-size: 1rem; }
+.sv-fees h2 br { display: none; }
+.sv-fees-title { display: block; margin-bottom: 10px; font-size: clamp(1.7rem, 2.6vw, 2.1rem); line-height: 1.15; }
+.sv-fees-title::first-letter { text-transform: uppercase; }
+.sv-fee { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); font-family: var(--f-body); font-size: 1.1rem; font-weight: 500; line-height: 1.35; color: var(--text); }
+.sv-price { flex: none; font-family: var(--f-display); font-size: 1.6rem; font-weight: 600; color: var(--ink); }
+.sv-fees .btn { justify-self: start; }
+
+@media (max-width: 700px) {
+  .sv .sv-pair, .article-body ul.sv-options { grid-template-columns: minmax(0, 1fr); }
+  .sv-step { padding-left: 40px; }
+}

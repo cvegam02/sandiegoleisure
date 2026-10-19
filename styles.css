@@ -528,7 +528,7 @@ img[src$="photo-5.jpg"] { object-position: 50% 45%; }
 
 /* Contacto directo */
 .sv > .sv-contact { padding: clamp(24px, 4vw, 36px); border-radius: var(--r); background: var(--ink); color: #fff; gap: 10px; }
-.sv-contact p { max-width: none; font-size: 1.15rem; }
+.sv-contact p { max-width: none; font-size: 1.15rem; overflow-wrap: anywhere; }
 .sv-contact strong { font-weight: 600; }
 .sv-contact a { color: var(--sun-2); }
 .sv-contact a:hover { color: #fff; }
@@ -536,7 +536,7 @@ img[src$="photo-5.jpg"] { object-position: 50% 45%; }
 /* Preguntas frecuentes, siempre visibles */
 .sv-faq { gap: 0 !important; }
 .sv-faq h3 { margin-bottom: 12px; }
-.sv-faq p { padding: 20px 0; border-top: 1px solid var(--line); color: var(--muted); }
+.sv-faq p { max-width: none; padding: 20px 0; border-top: 1px solid var(--line); color: var(--muted); }
 .sv-faq p:last-child { border-bottom: 1px solid var(--line); }
 .sv-faq p strong { display: block; margin-bottom: 6px; font-family: var(--f-display); font-weight: 500; font-size: 1.3rem; line-height: 1.3; color: var(--ink); }
 
@@ -556,3 +556,182 @@ img[src$="photo-5.jpg"] { object-position: 50% 45%; }
   .sv .sv-pair, .article-body ul.sv-options { grid-template-columns: minmax(0, 1fr); }
   .sv-step { padding-left: 40px; }
 }
+
+/* Lista corta en dos columnas */
+.article-body ul.sv-list2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 28px; max-width: none; }
+
+/* Caminos para calificar: un recuadro por camino */
+.sv-paths { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 6px; }
+.sv-path { display: grid; gap: 12px; align-content: start; padding: 24px; border-radius: var(--r-sm); background: var(--white); }
+.sv-path h3 { font-size: 1.35rem; }
+.sv-path p, .sv-path li { font-size: 1.05rem; }
+.sv-path-wide { grid-column: 1 / -1; }
+.sv-label-p { font-size: 1rem !important; font-weight: 700; color: var(--sea); }
+.article-body ul.sv-figure { gap: 4px; padding: 14px 16px; border-radius: var(--r-sm); background: #fff6e6; }
+.article-body ul.sv-figure li { padding-left: 0; }
+.article-body ul.sv-figure li::before { display: none; }
+.article-body ul.sv-figure li:first-child { font-family: var(--f-display); font-size: 1.45rem; line-height: 1.25; color: var(--ink); }
+.sv-figure strong { font-weight: 500; }
+
+/* Dónde empieza el trámite: etiqueta + explicación, en dos tarjetas */
+.article-body ul.sv-where { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto auto; grid-auto-flow: column; gap: 0 14px; max-width: none; }
+.article-body ul.sv-where li { padding: 0 22px; background: var(--sky); }
+.article-body ul.sv-where li::before { display: none; }
+.article-body ul.sv-where li:nth-child(odd) { padding-top: 20px; border-radius: var(--r) var(--r) 0 0; font-family: var(--f-display); font-size: 1.3rem; color: var(--ink); }
+.article-body ul.sv-where li:nth-child(odd) strong { font-weight: 500; }
+.article-body ul.sv-where li:nth-child(even) { padding-bottom: 20px; border-radius: 0 0 var(--r) var(--r); }
+
+/* Precios del gobierno */
+.article-body ul.sv-pricelist { gap: 0; max-width: 560px; }
+.article-body ul.sv-pricelist li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); font-family: var(--f-display); font-size: 1.45rem; font-weight: 600; color: var(--ink); }
+.article-body ul.sv-pricelist li::before { display: none; }
+.sv-pricelist li strong { font-family: var(--f-body); font-size: 1.1rem; font-weight: 500; color: var(--text); }
+
+/* Ventajas y desventajas: la etiqueta en negritas funciona como subtítulo */
+.sv-pros .sv-sublabel { margin-top: 10px; font-family: var(--f-display); font-size: 1.25rem; color: var(--ink); }
+.sv-pros .sv-sublabel strong { font-weight: 500; }
+.sv-pros h3 + .sv-sublabel { margin-top: 0; }
+
+/* Bloque de contacto con título y lista */
+.sv-contact h3 { color: #fff; }
+.sv-contact ul { display: grid; gap: 8px; }
+.sv-contact ul li { color: #e8eef2; }
+
+@media (max-width: 700px) {
+  .article-body ul.sv-list2, .sv-paths { grid-template-columns: minmax(0, 1fr); }
+  .article-body ul.sv-where { grid-template-columns: minmax(0, 1fr); grid-auto-flow: row; grid-template-rows: none; }
+  .article-body ul.sv-where li:nth-child(3) { margin-top: 14px; }
+}
+
+/* Encabezado de la página dentro del artículo */
+.sv-intro > h2 { font-size: clamp(1.9rem, 3.2vw, 2.6rem); }
+
+/* Enlace a otra guía del sitio: el título va primero a la vista */
+.sv-linkcard { display: flex; flex-direction: column-reverse; gap: 4px; padding: 18px 22px; border: 1.5px solid var(--line); border-left: 4px solid var(--sea); border-radius: var(--r-sm); background: var(--white); }
+.sv-linkcard h3 { font-size: 1.3rem !important; }
+.sv-linkcard p { font-size: .98rem; }
+
+/* Opciones cortas (1, 2 o 3 años) */
+.article-body ul.sv-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.article-body ul.sv-chips li { padding: 10px 22px; border-radius: 999px; background: var(--sky); font-family: var(--f-display); font-size: 1.3rem; color: var(--ink); }
+.article-body ul.sv-chips li::before { display: none; }
+
+/* Tabla de cuotas: concepto a la izquierda, monto a la derecha */
+.sv-rates { display: grid; max-width: 560px; padding: 22px 24px; border-radius: var(--r-sm); background: var(--white); }
+.sv-rates .sv-label { margin: 0 0 6px; }
+.sv-rates p { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px dashed var(--line); font-size: 1.05rem; }
+.sv-rates p:last-child { border-bottom: 0; }
+.sv-rates .sv-price { font-size: 1.4rem; }
+
+/* Precio del servicio de San Diego Leisure */
+.sv-offer { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); border-radius: var(--r); overflow: hidden; border: 1.5px solid var(--line); }
+.sv-offer-price { display: grid; align-content: center; gap: 6px; padding: 28px; background: var(--ink); }
+.sv .sv-offer-price .sv-label { color: var(--sun-2); margin: 0; }
+.sv .sv-amount { font-size: 2.2rem; line-height: 1.1; color: #fff; }
+.sv-offer-body { display: grid; gap: 12px; align-content: start; padding: 26px 28px; }
+.sv-offer-body li { font-size: 1.05rem; }
+
+/* Paneles sueltos (errores comunes) */
+.sv-col.sv-solo { padding: 26px; border-top: 0; border-radius: var(--r); }
+.sv-solo h3 { font-size: 1.45rem; }
+.sv-solo li, .sv-solo p { font-size: 1.05rem; }
+div.sv-note { display: grid; gap: 6px; }
+div.sv-note .sv-label { margin: 0; color: var(--ink); }
+
+/* Lista de documentos con casillas */
+.article-body ul.sv-checklist { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; max-width: none; }
+.article-body ul.sv-checklist li { padding: 14px 16px 14px 48px; border: 1.5px solid var(--line); border-radius: var(--r-sm); font-size: 1.05rem; line-height: 1.45; }
+.article-body ul.sv-checklist li::before { left: 16px; top: 17px; width: 18px; height: 18px; border-radius: 4px; background: none; border: 2px solid var(--sea); }
+.article-body ul.sv-checklist li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+/* Preguntas frecuentes escritas como encabezado */
+.sv-faq .sv-q { margin: 0; padding-top: 20px; border-top: 1px solid var(--line); font-size: 1.3rem; line-height: 1.3; }
+.sv-faq .sv-q + p { padding-top: 6px; border-top: 0; }
+
+@media (max-width: 700px) {
+  .sv-offer, .article-body ul.sv-checklist { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Listas del sitio anterior que en realidad son títulos: sin números ni viñetas */
+.sv ol.sv-plainlist, .article-body .sv ul.sv-plainlist { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.sv ol.sv-plainlist > li, .article-body .sv ul.sv-plainlist > li { padding-left: 0; }
+.sv ol.sv-plainlist > li::before, .article-body .sv ul.sv-plainlist > li::before { display: none; }
+.sv ol.sv-plainlist > li:not(.sv-olabel) { padding-left: 16px; border-left: 3px solid var(--line); }
+.sv .sv-olabel { font-weight: 700; color: var(--sea); font-size: 1rem; }
+.sv .sv-plabel { font-family: var(--f-display); font-weight: 500; font-size: 1.55rem; line-height: 1.2; color: var(--ink); }
+.sv .sv-olabel.sv-plabel { font-size: 1.7rem; }
+.sv .sv-plabel-sub { font-weight: 700; color: var(--sea); }
+.sv .sv-qlabel { font-family: var(--f-display); font-weight: 500; font-size: 1.3rem; color: var(--ink); }
+.sv-faq .sv-plainlist + p { border-top: 0; padding-top: 4px; }
+
+/* Pasos dentro de un paso */
+.sv-substeps { display: grid; gap: 8px; }
+.article-body .sv ul.sv-substeps { gap: 8px; }
+.article-body .sv ul.sv-substeps li, .sv div.sv-substeps p { padding: 12px 16px; border-radius: var(--r-sm); background: var(--sky); font-size: 1.05rem; }
+.article-body .sv ul.sv-substeps li::before { display: none; }
+
+/* Temporal y permanente, lado a lado */
+.sv .sv-types { align-items: start; margin-top: 0; }
+.sv-types .sv-chapter { display: grid; gap: 14px; padding: 26px; border-radius: var(--r); background: var(--sky); }
+.sv-types li, .sv-types p { font-size: 1.05rem; }
+
+/* Enlaces a recursos y precios */
+.sv .sv-linkpair { margin-top: 0; }
+p.sv-linkcard { display: block; font-size: 1.05rem; }
+.sv-feelinks { display: grid; max-width: 560px; }
+.sv-feelinks p { padding: 12px 0; border-bottom: 1px dashed var(--line); }
+
+/* Opciones en recuadros iguales */
+.sv-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.sv-tiles p { padding: 18px 22px; border-radius: var(--r-sm); background: var(--white); border-left: 4px solid var(--sun); font-family: var(--f-display); font-size: 1.3rem; line-height: 1.3; color: var(--ink); }
+.sv-note .sv-plabel strong { font-weight: 500; }
+
+/* Temas de lectura: título a la izquierda, texto a la derecha */
+.sv-topics { display: grid; gap: 0; margin-top: 8px; }
+.sv-topics > div { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 8px 32px; padding: 26px 0; border-top: 1px solid var(--line); }
+.sv-topics h3 { font-size: 1.3rem; line-height: 1.25; }
+.sv-topics p { font-size: 1.05rem; }
+.sv-address { padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .18); }
+
+/* Paquete de renovación de visa */
+.sv .sv-route .sv-plabel { font-size: 1.3rem; }
+.sv .sv-onink { color: #d7e1e7 !important; }
+.sv-packrates p:not(.sv-tip) { padding-bottom: 12px; border-bottom: 1px dashed var(--line); font-weight: 600; color: var(--ink); }
+.sv ol.sv-included { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.sv ol.sv-included > li { position: relative; padding: 14px 16px 14px 46px; border-radius: var(--r-sm); background: var(--sky); font-size: 1.02rem; line-height: 1.45; }
+.sv ol.sv-included > li::before { content: ""; position: absolute; left: 16px; top: 18px; width: 16px; height: 9px; border-left: 3px solid var(--sea); border-bottom: 3px solid var(--sea); transform: rotate(-45deg); }
+.sv > .sv-pickup { gap: 12px; }
+.sv-pickup p { max-width: none; color: var(--ink); line-height: 1.55; }
+
+@media (max-width: 700px) {
+  .sv-tiles, .sv ol.sv-included { grid-template-columns: minmax(0, 1fr); }
+  .sv-topics > div { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Detalles de texto dentro de un párrafo */
+.sv-inlabel { display: block; margin-bottom: 8px; font-family: var(--f-display); font-size: 1.35rem; line-height: 1.25; color: var(--ink); }
+.sv-inwarn { font-weight: 700; color: var(--ink); background: #ffe7b8; padding: 0 4px; border-radius: 3px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.sv-qinline { display: block; margin-bottom: 6px; font-family: var(--f-display); font-size: 1.3rem; line-height: 1.3; color: var(--ink); }
+.sv .sv-empty { margin: -32px 0 0; font-size: 0; line-height: 0; }
+.sv-sign { display: grid; gap: 2px; margin-top: 10px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, .18); }
+.sv-sign h3 { font-size: 1.6rem; }
+.sv-sign p { color: #d7e1e7; }
+.sv-types .sv-chapter p { line-height: 1.6; }
+.sv-ratetiles p { font-family: var(--f-body); font-size: 1.05rem; line-height: 1.5; color: var(--text); background: var(--sky); }
+.sv .sv-offer-price p.sv-amount { font-family: var(--f-display); font-size: 1.7rem; line-height: 1.2; }
+.sv ol.sv-included-1 { grid-template-columns: minmax(0, 1fr); }
+.sv-route-tight .sv-step { padding-bottom: 22px; }
+.sv-route-tight .sv-step::after { top: 4px; }
+.sv-route-tight .sv-step p { font-size: 1.1rem; }
+
+/* Canje: reglas y ayuda */
+.article-body ul.sv-checklist-1 { grid-template-columns: minmax(0, 1fr); }
+.article-body > section.sv-rules { padding: clamp(24px, 4vw, 36px); border-radius: var(--r); background: #fff6e6; border-left: 4px solid var(--sun); }
+.sv-rules h2 { font-size: clamp(1.6rem, 2.6vw, 2rem) !important; }
+.article-body > section.sv-helpbox { padding: clamp(24px, 4vw, 36px); border-radius: var(--r); background: var(--ink); color: #fff; }
+.sv-helpbox h2 { color: #fff; font-size: clamp(1.6rem, 2.6vw, 2rem) !important; }
+.sv-helpbox li { color: #e8eef2; }
+
+/* Galerías de 4 fotos: una fila de 4, o 2 × 2 en pantallas angostas */
+.article-body .gallery:has(> .g-card:nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 760px) { .article-body .gallery:has(> .g-card:nth-child(4):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

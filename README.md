@@ -57,7 +57,7 @@ Para mandarle cambios, edita, haz commit y push (o sube los archivos de nuevo). 
 
 | Archivo | Qué es |
 |---|---|
-| `index.html` … `us-visa-renewal.html` | Las 17 páginas, con los mismos nombres que en el sitio actual |
+| `index.html` … `us-visa-renewal.html` | Las 18 páginas, con los mismos nombres que en el sitio actual |
 | `styles.css` | Todo el diseño |
 | `main.js` | Menú del celular, encabezado al hacer scroll, botón de tamaño de letra, animaciones suaves |
 | `images/` | Fotos, logo y muestras de documentos |
@@ -77,7 +77,7 @@ No hacer esto en la vista previa; solo el día que el sitio nuevo reemplace al a
   ```
 - [ ] Agregar `sitemap.xml` con todas las páginas, con su dirección real terminada en `.html`. El sitemap actual lista direcciones sin `.html` (por ejemplo `http://sandiegoleisure.com/tr-mexico-visa`) y todas dan error 404. Mandarlo en Google Search Console.
 - [ ] Agregar la etiqueta `<link rel="canonical">` en cada página, apuntando a la versión con `www`.
-- [ ] Crear la página **Mexico Green Card** (`mexico-green-card.html`). Por ahora, los enlaces a esa página llevan al sitio actual.
+- [x] Crear la página **Mexico Green Card** (`mexico-green-card.html`), con el texto del sitio actual.
 - [ ] Configurar las **redirecciones 301** de las direcciones viejas en el hosting (Netlify o Cloudflare Pages).
 - [ ] Bajar a `images/` las imágenes de la galería que todavía se cargan desde los servidores de Google (`lh3.googleusercontent.com`).
 - [ ] DNS: cambiar **solo** el registro A y el CNAME de `www`. **No tocar** MX, SPF ni DMARC, para que el correo siga en Turbify.

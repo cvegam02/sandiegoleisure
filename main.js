@@ -66,3 +66,19 @@
   }, { threshold: 0.6 });
   els.forEach(function (el) { io.observe(el); });
 })();
+
+// Lateral (Jorge + otros servicios): si es más alto que la ventana, avanza con el
+// scroll hasta mostrar su última opción y desde ahí se queda fijo.
+(function () {
+  var aside = document.querySelector(".aside");
+  if (!aside) return;
+  var TOP = 110, BOTTOM = 24;
+  function fit() {
+    var top = Math.min(TOP, window.innerHeight - aside.offsetHeight - BOTTOM);
+    aside.style.top = top + "px";
+  }
+  fit();
+  window.addEventListener("resize", fit);
+  window.addEventListener("load", fit);
+  if ("ResizeObserver" in window) new ResizeObserver(fit).observe(aside);
+})();
